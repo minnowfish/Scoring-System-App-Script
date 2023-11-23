@@ -3,13 +3,12 @@ function checkAnswer(question,answer){
   const answerSheet = ss.getSheetByName('Answers');
   let range = answerSheet.getRange(2,1,10);
   const sheetQuestions = range.getValues();
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 10; i++) {
     if (sheetQuestions[i][0] === question){
       var index = i;
       break;
     }
   }
-
   range = answerSheet.getRange(index+2,2);
   const correctAnswer = range.getValue();
   
@@ -25,8 +24,8 @@ function findEmail(email){
   const scoreSheet = ss.getSheetByName('Scores');
   let range = scoreSheet.getRange(4,1,200);
   const sheetEmail = range.getValues();
-  for (let i = 0; i < 3; i++){
-    if (sheetEmail[i][0] === email){
+  for (let i = 0; i < 200; i++){
+    if (sheetEmail[i][0] == email){
       var index = i;
       break;
     }
